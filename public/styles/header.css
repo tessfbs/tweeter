@@ -1,0 +1,21 @@
+.container-nav-header {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.container-header {
+  height: 540px;
+  width: 100%;
+  text-align: center;
+  padding-top: 140px;
+  background-color: #cc8800;
+  background-image: url("https://www.transparenttextures.com/patterns/binding-dark.png");
+}
+ 
+.name-header {
+  color: antiquewhite;
+  font-size: larger;
+  text-align:center;
+}
+

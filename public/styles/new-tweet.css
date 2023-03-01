@@ -18,6 +18,10 @@
   resize: none;
 }
 
+#tweet-text::placeholder {
+  font-weight: bold;
+}
+
 .tweet-button {
   background-color: #4056A1;
   color: aliceblue;

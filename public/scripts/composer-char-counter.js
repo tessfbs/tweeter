@@ -15,5 +15,3 @@ $("#tweet-text").on('input', function() {
     }
     console.log("Number of characters", this.value.length);
 });
-
-

@@ -150,6 +150,32 @@ $(document).ready(function() { //Specify a function to execute when the DOM is f
   }
   loadTweets();
 
+  //create a scroll button
+  let scrollbutton = $("<button>")
+  let scrollIcon = $("<i>")
+  scrollIcon.attr("class","fa-solid fa-circle-up fa-3x")
+  scrollbutton.css({
+
+  });
+  scrollbutton.addClass("scroll-button") //layout.css
+  scrollbutton.append(scrollIcon)
+  $("body").append(scrollbutton);
+
+  // Show or hide the button based on the scroll position
+  $(window).scroll(() => {
+    if($(this).scrollTop() > 300) {
+      $(".scroll-button").fadeIn();
+    } else {
+      $(".scroll-button").fadeOut();
+    }
+  })
+
+  // Scroll to the top when the button is clicked
+  $(".scroll-button").click(() => {
+    $("html, body").animate({scrollTop: 0}, 1000);
+    return false;
+    })
+
 });
 
 

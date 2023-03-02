@@ -5,6 +5,8 @@
   justify-content: space-between;
   font-family: 'Bungee', cursive;
   margin-top: 2%;
+  padding-left: 2%;
+  padding-right: 2%;
 }
 
 #tweet-text {
@@ -14,7 +16,7 @@
   border-left: none;
   border-right: none;
   border-bottom: 4px solid rgb(81, 79, 79);
-  width: 700px;
+  width: 98%;
   font-family: 'Source Sans Pro', sans-serif;
   resize: none;
 }

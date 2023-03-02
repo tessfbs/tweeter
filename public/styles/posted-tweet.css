@@ -5,6 +5,7 @@
   margin-left: 3%;
   margin-right: 3%;
   color: rgb(97, 97, 99);
+  margin-top: 20px;
 
 }
 
@@ -62,3 +63,8 @@ article:hover {
 .name-avatar {
   display: flex;
 }
+
+/* .user-name {
+  margin-left: 10%;
+} */
+

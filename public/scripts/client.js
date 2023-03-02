@@ -7,40 +7,7 @@
 // const $tweet = $(`<article class="tweet">Hello world</article>`);
 
 $(document).ready(function() { //Specify a function to execute when the DOM is fully loaded.
-  console.log("Client.js test")
-
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ]
-  
-  const daysAgo = (date) => {
-    const today = new Date();
-    const postDate = new Date(date);
-    const diffTime = Math.abs(today - postDate);
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
-    return diffDays
-  }
+  console.log("Client.js test");
   
   const createTweetElement = function(tweet) {
     const escape = function (str) {
@@ -48,13 +15,12 @@ $(document).ready(function() { //Specify a function to execute when the DOM is f
       div.appendChild(document.createTextNode(str));
       return div.innerHTML;
     };
-
-  let $tweet = (`
+    let $tweet = (`
   <article>
   <header class="posted-tweet-header">
   <div class="name-avatar">
   <img src=${escape(tweet.user.avatars)}">
-  <p>${escape(tweet.user.name)}</p>
+  <p class="user-name">${escape(tweet.user.name)}</p>
   </div>
     <p class="username-tweet">${escape(tweet.user.handle)}</p>
   </header>
@@ -73,41 +39,39 @@ $(document).ready(function() { //Specify a function to execute when the DOM is f
   }
   
   const renderTweets = (tweets) => {
-    $('.all-tweets').empty()
-      for(let item in tweets){
-    $('.all-tweets').append(createTweetElement(tweets[item])
-  )
+    $('.all-tweets').empty();
+      for (let item in tweets) {
+    $('.all-tweets').append(createTweetElement(tweets[item]));
   }}
-  // renderTweets(data);
 
   //Add a new Tweer
     $("form").on("submit", function(event) {
       event.preventDefault() // Prevent default behavior of form submission
 
       const data = $(this).serialize();  // converts data to query string
-      console.log(data, data.length)
+      console.log(data, data.length);
 
       //create new element with jQuery for error-messages
       let newDiv = $("<div>");
       newDiv.attr("class","error-message");
-      let newIcon = $("<i>")
+      let newIcon = $("<i>");
       newIcon.attr("class","fa-solid fa-circle-exclamation")
       let newIcon2 = $("<i>");
       newIcon2.attr("class", "fa-solid fa-circle-exclamation");
-      newDiv.prepend(newIcon)
+      newDiv.prepend(newIcon);
       
-      if(data.length < 6){
-        $(".error-message").hide()
-        newDiv.append("Please enter text before submitting!")
-        newDiv.append(newIcon2)
-        $("form").prepend(newDiv)
+      if (data.length < 6) {
+        $(".error-message").hide();
+        newDiv.append("Please enter text before submitting!");
+        newDiv.append(newIcon2);
+        $("form").prepend(newDiv);
         return
       }
-      else if(data.length > 145){
-        $(".error-message").hide()
-        newDiv.append("Tweet content is too long!")
-        newDiv.append(newIcon2)
-        return $("form").prepend(newDiv)
+      else if (data.length > 145) {
+        $(".error-message").hide();
+        newDiv.append("Tweet content is too long!");
+        newDiv.append(newIcon2);
+        return $("form").prepend(newDiv);
       }
   
       // Send form data to the server using AJAX POST request
@@ -119,7 +83,7 @@ $(document).ready(function() { //Specify a function to execute when the DOM is f
       .then( (newTweet) => {
         console.log('Data sent successfully');
         console.log(newTweet);
-        $(".error-message").hide()
+        $(".error-message").hide();
         // renderTweets(newTweet);
         loadTweets();
       })
@@ -150,37 +114,34 @@ $(document).ready(function() { //Specify a function to execute when the DOM is f
 
   //hide text-box when click on the arrow
   $("#pointer").click(() => {
-    console.log("pointer clicked")
+    console.log("pointer clicked");
     $("form").slideToggle( "slow", function() {
     });
-  })
+  });
 
   $(".nav-new-tweet").click(() => {
     console.log("text clicked")
-    $("form").slideToggle( "slow", function() {
+    $("form").slideToggle("slow", function(){
     });
-  })
+  });
 
 
   //create a scroll button
-  let scrollbutton = $("<button>")
-  let scrollIcon = $("<i>")
-  scrollIcon.attr("class","fa-solid fa-circle-up fa-3x")
-  scrollbutton.css({
-
-  });
+  let scrollbutton = $("<button>");
+  let scrollIcon = $("<i>");
+  scrollIcon.attr("class","fa-solid fa-circle-up fa-3x");
   scrollbutton.addClass("scroll-button") //layout.css
-  scrollbutton.append(scrollIcon)
+  scrollbutton.append(scrollIcon);
   $("body").append(scrollbutton);
 
   // Show or hide the button based on the scroll position
   $(window).scroll(() => {
-    if($(this).scrollTop() > 300) {
+    if ($(this).scrollTop() > 300) {
       $(".scroll-button").fadeIn();
     } else {
       $(".scroll-button").fadeOut();
     }
-  })
+  });
 
   // Scroll to the top when the button is clicked
   $(".scroll-button").click(() => {

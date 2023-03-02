@@ -22,7 +22,7 @@
 }
 
 .icon-row-color {
-  color: #cc8800;
+  color: #cc0000;
 }
 
 .nav-right-word {
@@ -35,4 +35,12 @@
 
 button#pointer {
   all: unset;
+}
+
+@media only screen and (min-width: 200px) and (max-width: 1082px){
+
+  .container-nav{
+    background-color: #cc8800;
+    background-image: url("https://www.transparenttextures.com/patterns/binding-dark.png");
+  }
 }

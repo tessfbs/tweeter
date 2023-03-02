@@ -9,6 +9,7 @@
 }
 
 .nav-new-tweet {
+  all: unset;
   font-family: 'Source Sans Pro', sans-serif;
   margin-bottom: 10%;
 }

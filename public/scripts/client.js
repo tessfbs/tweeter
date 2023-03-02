@@ -150,6 +150,20 @@ $(document).ready(function() { //Specify a function to execute when the DOM is f
   }
   loadTweets();
 
+  //hide text-box when click on the arrow
+  $("#pointer").click(() => {
+    console.log("pointer clicked")
+    $("form").slideToggle( "slow", function() {
+    });
+  })
+
+  $(".nav-new-tweet").click(() => {
+    console.log("text clicked")
+    $("form").slideToggle( "slow", function() {
+    });
+  })
+
+
   //create a scroll button
   let scrollbutton = $("<button>")
   let scrollIcon = $("<i>")

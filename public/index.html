@@ -13,6 +13,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+  
 
 
     <!-- App CSS -->
@@ -24,11 +25,9 @@
     <link rel="stylesheet" href="/styles/posted-tweet.css"type="text/css" />
 
 
-
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
 
   </head>
 
@@ -37,9 +36,10 @@
       <nav class="container-nav">
           <span class="tweeter">tweeter</span>
           <div class="nav-right">
-            <div><span class="nav-new-tweet"><span class="nav-right-word">Write</span> a new tweet</span></div>
-            <div><i class="fas fa-angle-double-down fa-xs icon-row-color"></i></div>
-            </section>
+            <div class="nav-new-tweet">
+              <strong>Write</strong></span><span> a new tweet</span>
+            </div>
+              <button id="pointer"><i class="fas fa-angle-double-down fa-xs icon-row-color"></i></button>
           </div>
       </nav>
       <header class="container-header">
@@ -54,7 +54,6 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section>
-        <h2>Compose Tweet</h2>
         <form method="post" action="/tweets/">
           <label for="tweet-text"></label>
           <textarea name="text" id="tweet-text" maxlength="300" placeholder="What are you humming about?"></textarea>

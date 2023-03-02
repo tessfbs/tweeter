@@ -13,5 +13,5 @@ $("#tweet-text").on('input', function() {
     } else {
       counterOutput.css("color", ""); // reset to default color if not less than 0
     }
-    console.log("Number of characters", this.value.length);
+    // console.log("Number of characters", this.value.length);
 });

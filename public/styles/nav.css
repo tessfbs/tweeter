@@ -3,19 +3,21 @@
   height: 120px;
   justify-content:space-between;
   align-items: center;
-  padding-left: 1.5em;
-  padding-right: 1.5em;
+  padding-left: 3em;
+  padding-right: 3em;
   width: 100vw;
 }
 
 .nav-new-tweet {
   font-family: 'Source Sans Pro', sans-serif;
+  margin-bottom: 10%;
 }
 
 .nav-right {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around;
 }
 
 .icon-row-color {
@@ -28,4 +30,8 @@
 
 .tweeter{
   font-size: 1.5em;
+}
+
+button#pointer {
+  all: unset;
 }

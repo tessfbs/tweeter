@@ -40,6 +40,20 @@ main {
   justify-content: center;
 }
 
+.scroll-button {
+  all: unset;
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: red;
+}
+
+.scroll-button:hover {
+  color: orange;
+
+}
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */

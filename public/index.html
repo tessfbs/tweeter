@@ -3,6 +3,7 @@
   <head>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
@@ -36,18 +37,14 @@
       <nav class="container-nav">
           <span class="tweeter">tweeter</span>
           <div class="nav-right">
-              <button class="nav-new-tweet"><strong>Write</strong></span><span> a new tweet</span></button>
+              <button class="nav-new-tweet"><strong>Write</strong></span><span> a new tweet</span></button> 
               <button id="pointer"><i class="fas fa-angle-double-down fa-xs icon-row-color"></i></button>
           </div>
       </nav>
       <header class="container-header">
-        <div class="image-header">
-            <img  src="/images/profile-hex.png"> 
-        </div>
-        <div class="name-header">
-            <h2>Your Name</h2>
-        </div>
-    </header>
+        <img class="image-header" src="/images/profile-hex.png"> 
+        <h2 class="name-header">Your Name</h2>
+      </header>
 
     <!-- Page-specific (main) content here -->
     <main class="container">

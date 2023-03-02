@@ -43,10 +43,6 @@ $(document).ready(function() { //Specify a function to execute when the DOM is f
   }
   
   const createTweetElement = function(tweet) {
-    // const $article = $("<article>");
-    // const $header = $("<header>");
-    // const $footer = $("<footer>");
-    
     const escape = function (str) {
       let div = document.createElement("div");
       div.appendChild(document.createTextNode(str));
@@ -56,8 +52,10 @@ $(document).ready(function() { //Specify a function to execute when the DOM is f
   let $tweet = (`
   <article>
   <header class="posted-tweet-header">
-    <img src=${escape(tweet.user.avatars)}">
-    <p>${escape(tweet.user.name)}</p>
+  <div class="name-avatar">
+  <img src=${escape(tweet.user.avatars)}">
+  <p>${escape(tweet.user.name)}</p>
+  </div>
     <p class="username-tweet">${escape(tweet.user.handle)}</p>
   </header>
   <p class="posted-tweet">${escape(tweet.content.text)}</p> 

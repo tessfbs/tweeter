@@ -58,3 +58,7 @@ article:hover {
   font-size: inherit;
   font-weight: bolder;
 }
+
+.name-avatar {
+  display: flex;
+}

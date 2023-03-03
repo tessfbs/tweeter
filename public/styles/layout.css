@@ -22,8 +22,6 @@ html {
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
   display: flex;
-  justify-content: flex-start;
-
 }
 
 nav {
@@ -42,6 +40,9 @@ main {
   display: flex;
   justify-content: center;
   margin-top: 9%;
+  margin-left: 5%;
+  margin-right: 5%;
+
 }
 
 .scroll-button {
@@ -57,7 +58,7 @@ main {
   color: orange;
 }
 
-@media only screen and (min-width: 200px) and (max-width: 1082px){
+@media only screen and (min-width: 757px) and (max-width: 1333px){
   body {
     flex-direction: column;
   }

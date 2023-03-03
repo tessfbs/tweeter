@@ -37,7 +37,28 @@ button#pointer {
   all: unset;
 }
 
-@media only screen and (min-width: 200px) and (max-width: 1082px){
+#pointer i:hover {
+  color: orange;
+}
+
+button#pointer:hover {
+  -webkit-animation: action 1s infinite  alternate;
+  animation: action 1s infinite  alternate;
+}
+
+@-webkit-keyframes action {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+
+@keyframes action {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+
+
+
+@media only screen and (min-width: 757px) and (max-width: 1333px){
 
   .container-nav{
     background-color: #cc8800;

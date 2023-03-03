@@ -27,7 +27,6 @@ $(document).ready(function() { //Specify a function to execute when the DOM is f
   <p class="posted-tweet">${escape(tweet.content.text)}</p> 
   <footer class="posted-tweet-footer">
     <p>${escape(timeago.format('${daysAgo(tweet.created_at)}','en_US'))}</p>
-  <div class="tweet-icons">
     <div class="tweet-icons">
       <i class="fa-solid fa-flag"></i>
       <i class="fa-solid fa-retweet"></i>
@@ -49,7 +48,7 @@ $(document).ready(function() { //Specify a function to execute when the DOM is f
       event.preventDefault() // Prevent default behavior of form submission
 
       const data = $(this).serialize();  // converts data to query string
-      console.log(data, data.length);
+      console.log(data, data.length, $("#tweet-text").val().length);
 
       //create new element with jQuery for error-messages
       let newDiv = $("<div>");
@@ -60,14 +59,14 @@ $(document).ready(function() { //Specify a function to execute when the DOM is f
       newIcon2.attr("class", "fa-solid fa-circle-exclamation");
       newDiv.prepend(newIcon);
       
-      if (data.length < 6) {
+      if ($("#tweet-text").val().length < 6) {
         $(".error-message").hide();
         newDiv.append("Please enter text before submitting!");
         newDiv.append(newIcon2);
         $("form").prepend(newDiv);
         return
       }
-      else if (data.length > 145) {
+      else if ($("#tweet-text").val().length > 140) {
         $(".error-message").hide();
         newDiv.append("Tweet content is too long!");
         newDiv.append(newIcon2);
@@ -84,7 +83,8 @@ $(document).ready(function() { //Specify a function to execute when the DOM is f
         console.log('Data sent successfully');
         console.log(newTweet);
         $(".error-message").hide();
-        // renderTweets(newTweet);
+        $('textarea').val("");
+        $("#counter").text(140);
         loadTweets();
       })
       .catch((error) => {
@@ -117,26 +117,28 @@ $(document).ready(function() { //Specify a function to execute when the DOM is f
     console.log("pointer clicked");
     $("form").slideToggle( "slow", function() {
     });
+    $("#tweet-text").focus();
   });
 
   $(".nav-new-tweet").click(() => {
     console.log("text clicked")
     $("form").slideToggle("slow", function(){
     });
+    $("#tweet-text").focus();
   });
 
 
   //create a scroll button
   let scrollbutton = $("<button>");
   let scrollIcon = $("<i>");
-  scrollIcon.attr("class","fa-solid fa-circle-up fa-3x");
+  scrollIcon.attr("class","fa-solid fa-circle-up fa-4x");
   scrollbutton.addClass("scroll-button") //layout.css
   scrollbutton.append(scrollIcon);
   $("body").append(scrollbutton);
 
   // Show or hide the button based on the scroll position
   $(window).scroll(() => {
-    if ($(this).scrollTop() > 300) {
+    if ($(this).scrollTop() > 150) {
       $(".scroll-button").fadeIn();
     } else {
       $(".scroll-button").fadeOut();
@@ -148,7 +150,6 @@ $(document).ready(function() { //Specify a function to execute when the DOM is f
     $("html, body").animate({scrollTop: 0}, 1000);
     return false;
     })
-
 });
 
 

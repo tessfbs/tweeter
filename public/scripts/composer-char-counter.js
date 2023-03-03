@@ -6,6 +6,7 @@ let counterOutput = $("#counter");
 let text = $("#tweet-text")
 counterOutput.text(140)
 
+
 $("#tweet-text").on('input', function() {
     counterOutput.text(140 - this.value.length);
     if(counterOutput.text() < 0){

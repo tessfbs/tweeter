@@ -41,3 +41,10 @@
   margin-bottom: 5%;
 }
 
+@media only screen and (min-width: 757px) and (max-width: 1333px){
+
+  #tweet-text {
+    margin-top: 0%;
+  }
+}
+

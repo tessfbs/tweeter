@@ -18,4 +18,5 @@ This repository is the starter code for the project: Students will fork and clon
 - Node 5.10.x or above
 
 ## Screenshots
-!["Screenshot of tweet compose box](url)
+!["Screenshot of tweet compose box]((https://github.com/tessfbs/tweeter/blob/master/Tweeter%20-%20Recording.mp4))
+!["Screenshot of tweet compose box]()

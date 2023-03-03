@@ -17,6 +17,8 @@ This repository is the starter code for the project: Students will fork and clon
 - Express
 - Node 5.10.x or above
 
-## Screenshots
-!["Screenshot of tweet compose box](https://github.com/tessfbs/tweeter/blob/master/public/images/Tweeter%20-%20Recording.mp4)
-!["Screenshot of tweet compose box]()
+## DEMO VIDEO
+
+<img src="https://github.com/tessfbs/tweeter/blob/master/public/images/Tweeter-demo.gif?raw=true"/>
+
+

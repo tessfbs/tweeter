@@ -9,6 +9,7 @@
 $(document).ready(function() { //Specify a function to execute when the DOM is fully loaded.
   console.log("Client.js test");
   
+  //create a new element for posted tweets
   const createTweetElement = function(tweet) {
     const escape = function (str) {
       let div = document.createElement("div");
@@ -37,6 +38,7 @@ $(document).ready(function() { //Specify a function to execute when the DOM is f
   return $tweet;
   }
   
+  //Render all tweets
   const renderTweets = (tweets) => {
     $('.all-tweets').empty();
       for (let item in tweets) {
@@ -119,14 +121,6 @@ $(document).ready(function() { //Specify a function to execute when the DOM is f
     });
     $("#tweet-text").focus();
   });
-
-  $(".nav-new-tweet").click(() => {
-    console.log("text clicked")
-    $("form").slideToggle("slow", function(){
-    });
-    $("#tweet-text").focus();
-  });
-
 
   //create a scroll button
   let scrollbutton = $("<button>");
